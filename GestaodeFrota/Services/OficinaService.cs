@@ -23,5 +23,12 @@ namespace GestaodeFrota.Services
             return _context.Oficina.ToList();
         }
 
+        //Inserindo Um Oficina no banco de dados
+        public void Insert(Oficina obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

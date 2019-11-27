@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,11 +12,16 @@ namespace GestaodeFrota.Models
         public string Placa { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
+        [Display(Name = "Ano de Fabricacao")]
+        [DataType(DataType.Date)]
         public DateTime Ano { get; set; }
         public int Quilometragem { get; set; }
         public Boolean Alugado { get; set; }
+        [Display(Name = "O Automovel está Disponivel?")]
         public Boolean Disponivel { get; set; }
         public Apolice Apolice { get; set; }
+        [Display(Name = "Apolice")]
+        public int ApoliceId { get; set; }
         public ICollection<Abastecimento> Abastecimento { get; set; } = new List<Abastecimento>();
         public ICollection<Viagem> Viagem { get; set; } = new List<Viagem>();
         public ICollection<Manutencao> Manutencao { get; set; } = new List<Manutencao>();

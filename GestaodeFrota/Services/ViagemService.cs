@@ -20,7 +20,14 @@ namespace GestaodeFrota.Services
 
         public List<Viagem> FindAll()
         {
-            return _context.Viagem.ToList();
+            return _context.Viagem.OrderBy(x => x.DataSaida).ToList();
+        }
+
+        //Inserindo Um Viagem no banco de dados
+        public void Insert(Viagem obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
     }

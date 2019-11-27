@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestaodeFrota.Models
 {
     public class Posto
     {
         public int Id { get; set; }
+        [Display(Name = "Nome do Posto")]
         public string NomePosto { get; set; }
+        [Display(Name = "Endereco do Posto")]
         public string EnderecoPosto { get; set; }
         public ICollection<Abastecimento> Abastecimento { get; set; } = new List<Abastecimento>();
 

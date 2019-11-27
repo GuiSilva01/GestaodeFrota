@@ -18,9 +18,17 @@ namespace GestaodeFrota.Services
             _context = context;
         }
 
+        //Busca um lista de manuencao ordenada por data
         public List<Manutencao> FindAll()
         {
-            return _context.Manutencao.ToList();
+            return _context.Manutencao.OrderBy(x => x.DataManutencao).ToList();
+        }
+
+        //Inserindo Um Manutencao no banco de dados
+        public void Insert(Manutencao obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
     }

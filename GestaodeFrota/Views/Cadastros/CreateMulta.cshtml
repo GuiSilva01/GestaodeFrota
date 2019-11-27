@@ -1,4 +1,4 @@
-﻿@model GestaodeFrota.Models.Multa
+﻿@model GestaodeFrota.Models.ViewModels.MultaFormViewModel
 
 @{
     ViewData["Title"] = "Multa";
@@ -6,35 +6,39 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<h4>Cadastro de Multa</h4>
+<h4>Cadastro de Multas</h4>
 <hr />
 
 <div class="row">
     <div class="col-4">
-        <form asp-action="Create">
+        <form asp-action="CreateMulta">
             <div class="form-group">
-                <label asp-for="LocalMulta" class="control-label"></label>
-                <input asp-for="LocalMulta" class="form-control" />
+                <label asp-for="Multa.LocalMulta" class="control-label"></label>
+                <input asp-for="Multa.LocalMulta" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataMulta" class="control-label"></label>
-                <input asp-for="DataMulta" class="form-control" />
+                <label asp-for="Multa.DataMulta" class="control-label"></label>
+                <input asp-for="Multa.DataMulta" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Gravidade" class="control-label"></label>
-                <input asp-for="Gravidade" class="form-control" />
+                <label asp-for="Multa.Gravidade" class="control-label"></label>
+                <input asp-for="Multa.Gravidade" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Pontos" class="control-label"></label>
-                <input asp-for="Pontos" class="form-control" />
+                <label asp-for="Multa.Pontos" class="control-label"></label>
+                <input asp-for="Multa.Pontos" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="CodIfracao" class="control-label"></label>
-                <input asp-for="CodIfracao" class="form-control" />
+                <label asp-for="Multa.CodIfracao" class="control-label"></label>
+                <input asp-for="Multa.CodIfracao" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Valor" class="control-label"></label>
-                <input asp-for="Valor" class="form-control" />
+                <label asp-for="Multa.Valor" class="control-label"></label>
+                <input asp-for="Multa.Valor" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Multa.AutomovelId" class="control-label"></label>
+                <select asp-for="Multa.AutomovelId" asp-items="@(new SelectList(Model.Automovels,"Id","Placa"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-danger" />

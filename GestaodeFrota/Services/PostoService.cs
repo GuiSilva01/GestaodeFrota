@@ -23,5 +23,12 @@ namespace GestaodeFrota.Services
             return _context.Posto.ToList();
         }
 
+
+        //Inserindo Um Posto no banco de dados
+        public void Insert(Posto obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }

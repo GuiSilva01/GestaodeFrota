@@ -19,9 +19,11 @@ namespace GestaodeFrota.Controllers
         private readonly OficinaService _oficinaService;
         private readonly PostoService _postoService;
         private readonly ViagemService _viagemService;
+        private readonly TodosMotoristaService _todosMotorstaService;
+        private readonly TodosAutomovelService _todosAutomovelService;
 
         
-        public ConsultasController(SeguroService seguroService, ApoliceService apoliceService, AutomovelService automovelService, AbastecimentoService abastecimentoService, ManutencaoService manutencaoService, MotoristaService motoristaService, MultaService multaService, OficinaService oficinaService, PostoService postoService, ViagemService viagemService)
+        public ConsultasController(SeguroService seguroService, ApoliceService apoliceService, AutomovelService automovelService, AbastecimentoService abastecimentoService, ManutencaoService manutencaoService, MotoristaService motoristaService, MultaService multaService, OficinaService oficinaService, PostoService postoService, ViagemService viagemService, TodosMotoristaService todosMotoristaService, TodosAutomovelService todosAutomovelService)
         {
             _seguroService = seguroService;
             _apoliceService = apoliceService;
@@ -33,6 +35,8 @@ namespace GestaodeFrota.Controllers
             _oficinaService = oficinaService;
             _postoService = postoService;
             _viagemService = viagemService;
+            _todosMotorstaService = todosMotoristaService;
+            _todosAutomovelService = todosAutomovelService;
         }
         public IActionResult Index()
         {
@@ -41,14 +45,14 @@ namespace GestaodeFrota.Controllers
 
         public IActionResult SelectMotorista()
         {
-           
-            var list = _motoristaService.FindAll();
+
+            var list = _todosMotorstaService.FindAll();
             return View(list);
         }
 
         public IActionResult SelectAutomovel()
         {
-            var list = _automovelService.FindAll();
+            var list = _todosAutomovelService.FindAll();
             return View(list);
         }
 

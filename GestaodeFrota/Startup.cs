@@ -56,6 +56,8 @@ namespace GestaodeFrota
             services.AddScoped<OficinaService>();
             services.AddScoped<PostoService>();
             services.AddScoped<ViagemService>();
+            services.AddScoped<TodosMotoristaService>();
+            services.AddScoped<TodosAutomovelService>();
 
 
 

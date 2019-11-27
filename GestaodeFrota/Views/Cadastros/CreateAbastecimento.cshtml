@@ -1,4 +1,4 @@
-﻿@model GestaodeFrota.Models.Abastecimento
+﻿@model GestaodeFrota.Models.ViewModels.AbastecimentoFormViewModel
 
 @{
     ViewData["Title"] = "Abastecimento";
@@ -13,20 +13,26 @@
     <div class="col-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Litros" class="control-label"></label>
-                <input asp-for="Litros" class="form-control" />
+                <label asp-for="Abastecimento.Litros" class="control-label"></label>
+                <input asp-for="Abastecimento.Litros" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="ValorLitro" class="control-label"></label>
-                <input asp-for="ValorLitro" class="form-control" />
+                <label asp-for="Abastecimento.ValorLitro" class="control-label"></label>
+                <input asp-for="Abastecimento.ValorLitro" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="ValorAbaste" class="control-label"></label>
-                <input asp-for="ValorAbaste" class="form-control" />
+                <label asp-for="Abastecimento.ValorAbaste" class="control-label"></label>
+                <input asp-for="Abastecimento.ValorAbaste" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataAbaste" class="control-label"></label>
-                <input asp-for="DataAbaste" class="form-control" />
+                <label asp-for="Abastecimento.DataAbaste" class="control-label"></label>
+                <input asp-for="Abastecimento.DataAbaste" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abastecimento.AutomovelId" class="control-label"></label>
+                <select asp-for="Abastecimento.AutomovelId" asp-items="@(new SelectList(Model.Automovels,"Id","Placa"))" class="form-control"></select>
+                <label asp-for="Abastecimento.PostoId" class="control-label"></label>
+                <select asp-for="Abastecimento.PostoId" asp-items="@(new SelectList(Model.Postos,"Id","EnderecoPosto"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-danger" />

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace GestaodeFrota.Services
 {
-    public class AutomovelService
+    public class TodosAutomovelService
     {
         private readonly ApplicationDbContext _context;
 
 
-        public AutomovelService(ApplicationDbContext context)
+        public TodosAutomovelService(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -20,15 +20,7 @@ namespace GestaodeFrota.Services
         //Busca os automoveis Disponiveis do banco
         public List<Automovel> FindAll()
         {
-            return _context.Automovel.Where(model => model.Disponivel == true).ToList();
+            return _context.Automovel.OrderBy(x => x.Ano).ToList();
         }
-
-        //Inserindo Um Automovel no banco de dados
-        public void Insert(Automovel obj)
-        {
-            _context.Add(obj);
-            _context.SaveChanges();
-        }
-
     }
 }

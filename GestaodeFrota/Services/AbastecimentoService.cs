@@ -18,9 +18,17 @@ namespace GestaodeFrota.Services
             _context = context;
         }
 
+        //Metodo para buscar um abastecimento do banco ordenado por data
         public List<Abastecimento> FindAll()
         {
-            return _context.Abastecimento.ToList();
+            return _context.Abastecimento.OrderBy(x => x.DataAbaste).ToList();
+        }
+
+        //Inserindo Um abastecimento no banco de dados
+        public void Insert(Abastecimento obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
     }

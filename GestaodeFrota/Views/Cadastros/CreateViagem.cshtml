@@ -1,4 +1,4 @@
-﻿@model GestaodeFrota.Models.Viagem
+﻿@model GestaodeFrota.Models.ViewModels.ViagemFormViewModel
 
 @{
     ViewData["Title"] = "Viagem";
@@ -6,39 +6,47 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<h4>Cadastro de Viagem</h4>
+<h4>Cadastro de Viagens</h4>
 <hr />
 
 <div class="row">
     <div class="col-4">
-        <form asp-action="Create">
+        <form asp-action="CreateViagem">
             <div class="form-group">
-                <label asp-for="DataSaida" class="control-label"></label>
-                <input asp-for="DataSaida" class="form-control" />
+                <label asp-for="Viagem.DataSaida" class="control-label"></label>
+                <input asp-for="Viagem.DataSaida" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataChegada" class="control-label"></label>
-                <input asp-for="DataChegada" class="form-control" />
+                <label asp-for="Viagem.DataChegada" class="control-label"></label>
+                <input asp-for="Viagem.DataChegada" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="OdometroSaida" class="control-label"></label>
-                <input asp-for="OdometroSaida" class="form-control" />
+                <label asp-for="Viagem.OdometroSaida" class="control-label"></label>
+                <input asp-for="Viagem.OdometroSaida" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="OdodmetroChegada" class="control-label"></label>
-                <input asp-for="OdodmetroChegada" class="form-control" />
+                <label asp-for="Viagem.OdodmetroChegada" class="control-label"></label>
+                <input asp-for="Viagem.OdodmetroChegada" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DestinoSaida" class="control-label"></label>
-                <input asp-for="DestinoSaida" class="form-control" />
+                <label asp-for="Viagem.DestinoSaida" class="control-label"></label>
+                <input asp-for="Viagem.DestinoSaida" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DestinoChegada" class="control-label"></label>
-                <input asp-for="DestinoChegada" class="form-control" />
+                <label asp-for="Viagem.DestinoChegada" class="control-label"></label>
+                <input asp-for="Viagem.DestinoChegada" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DescriçaoViagem" class="control-label"></label>
-                <input asp-for="DescriçaoViagem" class="form-control" />
+                <label asp-for="Viagem.DescriçaoViagem" class="control-label"></label>
+                <input asp-for="Viagem.DescriçaoViagem" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Viagem.AutomovelId" class="control-label"></label>
+                <select asp-for="Viagem.AutomovelId" asp-items="@(new SelectList(Model.Automovels,"Id","Placa"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Viagem.MotoristaId" class="control-label"></label>
+                <select asp-for="Viagem.MotoristaId" asp-items="@(new SelectList(Model.Motoristas,"Id","NomeMotorista"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-danger" />

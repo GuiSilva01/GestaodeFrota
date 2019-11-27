@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace GestaodeFrota.Models
 {
     public class Apolice
     {
         public int Id { get; set; }
+        [Display(Name = "Tipo da Apolice ")]
         public string Tipo { get; set; }
+        [Display(Name = "Descricao da Apolice  ")]
         public string Descricao { get; set; }
         public Seguro Seguro { get; set; }
+        [Display(Name = "Seguro")]
+        public int SeguroId { get; set; }
         public ICollection<Automovel> Automovel { get; set; } = new List<Automovel>();
 
         public Apolice()

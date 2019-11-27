@@ -18,9 +18,17 @@ namespace GestaodeFrota.Services
             _context = context;
         }
 
+        //Busca lista de multa Ordenada por 
         public List<Multa> FindAll()
         {
-            return _context.Multa.ToList();
+            return _context.Multa.OrderBy(x => x.DataMulta).ToList();
+        }
+
+        //Inserindo Um Multa no banco de dados
+        public void Insert(Multa obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
     }

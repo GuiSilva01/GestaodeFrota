@@ -1,4 +1,4 @@
-﻿@model GestaodeFrota.Models.Automovel
+﻿@model GestaodeFrota.Models.ViewModels.AutomovelFormViewModel
 
 @{
     ViewData["Title"] = "Automovel";
@@ -11,34 +11,38 @@
 
 <div class="row">
     <div class="col-4">
-        <form asp-action="Create">
+        <form asp-action="CreateAutomovel">
             <div class="form-group">
-                <label asp-for="Placa" class="control-label"></label>
-                <input asp-for="Placa" class="form-control" />
+                <label asp-for="Automovel.Placa" class="control-label"></label>
+                <input asp-for="Automovel.Placa" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
+                <label asp-for="Automovel.Marca" class="control-label"></label>
+                <input asp-for="Automovel.Marca" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Modelo" class="control-label"></label>
-                <input asp-for="Modelo" class="form-control" />
+                <label asp-for="Automovel.Modelo" class="control-label"></label>
+                <input asp-for="Automovel.Modelo" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Ano" class="control-label"></label>
-                <input asp-for="Ano" class="form-control" />
+                <label asp-for="Automovel.Ano" class="control-label"></label>
+                <input asp-for="Automovel.Ano" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Quilometragem" class="control-label"></label>
-                <input asp-for="Quilometragem" class="form-control" />
+                <label asp-for="Automovel.Quilometragem" class="control-label"></label>
+                <input asp-for="Automovel.Quilometragem" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Alugado" class="control-label"></label>
-                <input asp-for="Alugado" class="form-control" />
+                <label asp-for="Automovel.Alugado" class="control-label"></label>
+                <input asp-for="Automovel.Alugado" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Disponivel" class="control-label"></label>
-                <input asp-for="Disponivel" class="form-control" />
+                <label asp-for="Automovel.Disponivel" class="control-label"></label>
+                <input asp-for="Automovel.Disponivel" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Automovel.ApoliceId" class="control-label"></label>
+                <select asp-for="Automovel.ApoliceId" asp-items="@(new SelectList(Model.Apolices,"Id","Tipo"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-danger" />
@@ -46,4 +50,3 @@
         </form>
     </div>
 </div>
-

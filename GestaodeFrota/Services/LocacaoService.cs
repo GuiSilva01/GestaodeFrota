@@ -20,7 +20,14 @@ namespace GestaodeFrota.Services
 
         public List<Locacao> FindAll()
         {
-            return _context.Locacao.ToList();
+            return _context.Locacao.OrderBy(x => x.DataLocacao).ToList();
+        }
+
+        //Inserindo Um Locacao no banco de dados
+        public void Insert(Locacao obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
     }

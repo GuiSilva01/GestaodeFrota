@@ -23,5 +23,12 @@ namespace GestaodeFrota.Services
             return _context.Seguro.ToList();
         }
 
+        //Inserindo Um Seguro no banco de dados
+        public void Insert(Seguro obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

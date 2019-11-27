@@ -22,5 +22,12 @@ namespace GestaodeFrota.Services
             return _context.Apolice.ToList();
         }
 
+        //Inserindo Um Apolice no banco de dados
+        public void Insert(Apolice obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

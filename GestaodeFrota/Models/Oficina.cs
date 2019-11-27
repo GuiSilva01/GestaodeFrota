@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace GestaodeFrota.Models
 {
     public class Oficina
     {
         public int Id { get; set; }
+        [Display(Name = "Nome da Oficina")]
         public string NomeOficina { get; set; }
+        [Display(Name = "Endereço da Oicina  ")]
         public string Endereco { get; set; }
 
 
