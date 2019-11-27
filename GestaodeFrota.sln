@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaodeFrota", "GestaodeFrota\GestaodeFrota.csproj", "{4E18E004-2C2A-4378-AD3C-5FD3075F8DD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E18E004-2C2A-4378-AD3C-5FD3075F8DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E18E004-2C2A-4378-AD3C-5FD3075F8DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E18E004-2C2A-4378-AD3C-5FD3075F8DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E18E004-2C2A-4378-AD3C-5FD3075F8DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6467EA87-AF61-47A4-9B40-69133E25E5A2}
+	EndGlobalSection
+EndGlobal
