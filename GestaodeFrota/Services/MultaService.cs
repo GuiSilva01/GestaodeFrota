@@ -31,5 +31,18 @@ namespace GestaodeFrota.Services
             _context.SaveChanges();
         }
 
+        // Metodo de buscar Multa por Id Utilizando o LINQ
+        public Multa FindById(int id)
+        {
+            return _context.Multa.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Multa por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Multa.Find(id);
+            _context.Multa.Remove(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

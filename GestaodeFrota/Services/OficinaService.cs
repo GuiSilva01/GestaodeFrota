@@ -30,5 +30,18 @@ namespace GestaodeFrota.Services
             _context.SaveChanges();
         }
 
+        // Metodo de buscar Oficina por Id Utilizando o LINQ
+        public Oficina FindById(int id)
+        {
+            return _context.Oficina.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Oficina por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Oficina.Find(id);
+            _context.Oficina.Remove(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

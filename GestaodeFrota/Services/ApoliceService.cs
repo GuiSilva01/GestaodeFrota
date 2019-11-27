@@ -28,6 +28,18 @@ namespace GestaodeFrota.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+        // Metodo de buscar Apolice por Id Utilizando o LINQ
+        public Apolice FindById(int id)
+        {
+            return _context.Apolice.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Apolice por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Apolice.Find(id);
+            _context.Apolice.Remove(obj);
+            _context.SaveChanges();
+        }
 
     }
 }

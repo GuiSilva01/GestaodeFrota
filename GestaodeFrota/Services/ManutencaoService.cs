@@ -31,5 +31,18 @@ namespace GestaodeFrota.Services
             _context.SaveChanges();
         }
 
+        // Metodo de buscar Manutencao por Id Utilizando o LINQ
+        public Manutencao FindById(int id)
+        {
+            return _context.Manutencao.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Manutencao por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Manutencao.Find(id);
+            _context.Manutencao.Remove(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

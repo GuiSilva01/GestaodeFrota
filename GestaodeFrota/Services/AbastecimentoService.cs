@@ -31,5 +31,17 @@ namespace GestaodeFrota.Services
             _context.SaveChanges();
         }
 
+        public Abastecimento FindById(int id)
+        {
+            return _context.Abastecimento.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um abastecimento por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Abastecimento.Find(id);
+            _context.Abastecimento.Remove(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

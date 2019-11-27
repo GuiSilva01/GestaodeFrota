@@ -31,26 +31,29 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LocalMulta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataMulta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gravidade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pontos)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CodIfracao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalMulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataMulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gravidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pontos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodIfracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="DeleteMulta" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

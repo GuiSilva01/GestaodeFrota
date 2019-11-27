@@ -1,0 +1,63 @@
+﻿@model GestaodeFrota.Models.Viagem
+@{
+    ViewData["Title"] = "Viagem";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Tem certeza que vôce quer Deletar?</h3>
+
+<div>
+    <h4>Viagem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataSaida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataSaida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataChegada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataChegada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OdometroSaida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OdometroSaida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OdodmetroChegada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OdodmetroChegada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinoSaida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DestinoSaida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinoChegada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DestinoChegada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriçaoViagem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescriçaoViagem)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteViagem">
+        <input typy="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

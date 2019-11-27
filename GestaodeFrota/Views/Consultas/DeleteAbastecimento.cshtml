@@ -1,0 +1,45 @@
+﻿@model GestaodeFrota.Models.Abastecimento
+@{
+    ViewData["Title"] = "Abastecimento";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Tem certeza que vôce quer Deletar?</h3>
+
+<div>
+    <h4>Abastecimento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Litros)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Litros)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorLitro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorLitro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorAbaste)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorAbaste)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAbaste)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAbaste)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteAbastecimento">
+        <input typy="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

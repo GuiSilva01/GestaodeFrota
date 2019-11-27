@@ -1,0 +1,33 @@
+﻿@model GestaodeFrota.Models.Motorista
+@{
+    ViewData["Title"] = "Motorista";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Tem certeza que vôce quer Deletar?</h3>
+
+<div>
+    <h4>Motorista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CNH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CNH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidadeCNH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteMotorista">
+        <input typy="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

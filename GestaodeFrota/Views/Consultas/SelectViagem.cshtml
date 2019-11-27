@@ -34,29 +34,32 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataSaida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataChegada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OdometroSaida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OdodmetroChegada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DestinoSaida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DestinoChegada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DescriçaoViagem)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataChegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdometroSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdodmetroChegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinoSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinoChegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriçaoViagem)
+            </td>
+            <td>
+                <a asp-action="DeleteViagem" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

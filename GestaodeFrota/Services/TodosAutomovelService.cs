@@ -22,5 +22,18 @@ namespace GestaodeFrota.Services
         {
             return _context.Automovel.OrderBy(x => x.Ano).ToList();
         }
+
+        // Metodo de buscar Automovel por Id Utilizando o LINQ
+        public Automovel FindById(int id)
+        {
+            return _context.Automovel.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Automovel por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Automovel.Find(id);
+            _context.Automovel.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }

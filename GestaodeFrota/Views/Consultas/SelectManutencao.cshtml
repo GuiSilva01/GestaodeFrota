@@ -28,23 +28,26 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataManutencao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataProxManu)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Servico)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataManutencao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataProxManu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="DeleteManutencao" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

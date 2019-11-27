@@ -30,5 +30,19 @@ namespace GestaodeFrota.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
+        // Metodo de buscar Posto por Id Utilizando o LINQ
+        public Posto FindById(int id)
+        {
+            return _context.Posto.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Posto por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Posto.Find(id);
+            _context.Posto.Remove(obj);
+            _context.SaveChanges();
+        }
+
     }
 }

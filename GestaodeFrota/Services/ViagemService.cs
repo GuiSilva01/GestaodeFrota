@@ -30,5 +30,18 @@ namespace GestaodeFrota.Services
             _context.SaveChanges();
         }
 
+
+        // Metodo de buscar Viagem por Id Utilizando o LINQ
+        public Viagem FindById(int id)
+        {
+            return _context.Viagem.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Viagem por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Viagem.Find(id);
+            _context.Viagem.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }

@@ -28,7 +28,23 @@ namespace GestaodeFrota.Services
         {
             _context.Add(obj);
             _context.SaveChanges();
+
         }
+
+
+        // Metodo de buscar Seguro por Id Utilizando o LINQ
+        public Seguro FindById(int id)
+        {
+            return _context.Seguro.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Seguro por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Seguro.Find(id);
+            _context.Seguro.Remove(obj);
+            _context.SaveChanges();
+        }
+
 
     }
 }

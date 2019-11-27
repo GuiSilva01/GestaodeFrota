@@ -22,5 +22,18 @@ namespace GestaodeFrota.Services
         {
             return _context.Motorista.OrderBy(x => x.NomeMotorista).ToList();
         }
+
+        // Metodo de buscar Motorista por Id Utilizando o LINQ
+        public Motorista FindById(int id)
+        {
+            return _context.Motorista.FirstOrDefault(obj => obj.Id == id);
+        }
+        // Metodo de remover um Motorista por ID
+        public void Remove(int id)
+        {
+            var obj = _context.Motorista.Find(id);
+            _context.Motorista.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }
