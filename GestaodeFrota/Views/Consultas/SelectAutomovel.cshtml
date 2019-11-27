@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GestaodeFrota.Models.Automovel>
+@{
+    ViewData["Title"] = "Automovel";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Placa)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Marca)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Ano)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Quilometragem)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Alugado)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Disponivel)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Placa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quilometragem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alugado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponivel)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

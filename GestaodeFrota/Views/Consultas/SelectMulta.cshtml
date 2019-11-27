@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GestaodeFrota.Models.Multa>
+@{
+    ViewData["Title"] = "Multa";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.LocalMulta)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DataMulta)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Gravidade)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Pontos)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.CodIfracao)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Valor)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocalMulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataMulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gravidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pontos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodIfracao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

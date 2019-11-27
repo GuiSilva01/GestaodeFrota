@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GestaodeFrota.Models.Viagem>
+@{
+    ViewData["Title"] = "Viagem";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DataChegada)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.OdometroSaida)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.OdodmetroChegada)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DestinoSaida)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DestinoChegada)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DescriçaoViagem)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataSaida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataChegada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdometroSaida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdodmetroChegada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinoSaida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinoChegada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescriçaoViagem)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

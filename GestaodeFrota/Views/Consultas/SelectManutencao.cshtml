@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GestaodeFrota.Models.Manutencao>
+@{
+    ViewData["Title"] = "Manutencao";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.DataManutencao)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DataProxManu)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Servico)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Valor)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataManutencao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataProxManu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Servico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

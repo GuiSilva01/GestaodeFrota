@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GestaodeFrota.Models.Motorista>
+@{
+    ViewData["Title"] = "Motorista";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.NomeMotorista)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.DataNasc)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.CNH)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.ValidadeCNH)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Disponivel)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeMotorista)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNasc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidadeCNH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponivel)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
