@@ -1,6 +1,6 @@
 using System;
 
-namespace GestaodeFrota.Models
+namespace GestaodeFrota.Models.ViewModels
 {
     public class ErrorViewModel
     {
