@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using GestaodeFrota.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using GestaodeFrota.Services;
 
 namespace GestaodeFrota
 {
@@ -43,6 +44,21 @@ namespace GestaodeFrota
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<SeguroService>();
+            services.AddScoped<ApoliceService>();
+            services.AddScoped<AbastecimentoService>();
+            services.AddScoped<AutomovelService>();
+            services.AddScoped<LocacaoService>();
+            services.AddScoped<ManutencaoService>();
+            services.AddScoped<MotoristaService>();
+            services.AddScoped<MultaService>();
+            services.AddScoped<OficinaService>();
+            services.AddScoped<PostoService>();
+            services.AddScoped<ViagemService>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

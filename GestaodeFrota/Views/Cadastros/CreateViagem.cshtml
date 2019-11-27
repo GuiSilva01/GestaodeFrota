@@ -1,0 +1,48 @@
+﻿@model GestaodeFrota.Models.Viagem
+
+@{
+    ViewData["Title"] = "Viagem";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Cadastro de Viagem</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DataSaida" class="control-label"></label>
+                <input asp-for="DataSaida" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DataChegada" class="control-label"></label>
+                <input asp-for="DataChegada" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OdometroSaida" class="control-label"></label>
+                <input asp-for="OdometroSaida" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OdodmetroChegada" class="control-label"></label>
+                <input asp-for="OdodmetroChegada" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinoSaida" class="control-label"></label>
+                <input asp-for="DestinoSaida" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinoChegada" class="control-label"></label>
+                <input asp-for="DestinoChegada" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriçaoViagem" class="control-label"></label>
+                <input asp-for="DescriçaoViagem" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

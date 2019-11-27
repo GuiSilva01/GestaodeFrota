@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Cadastros";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Automoveis Cadastros</h4>
+
+<hr />
+<div class="btn-group">
+    <p>
+        <a asp-action="CreateMotorista" class="btn btn-outline-dark">Motorista</a>
+    </p>
+    <p>
+        <a asp-action="CreateAutomovel" class="btn btn-outline-success">Automoveis</a>
+    </p>
+    <p>
+        <a asp-action="CreateViagem" class="btn btn-outline-dark">Viagens</a>
+    </p>
+    <p>
+        <a asp-action="CreateAbastecimento" class="btn btn-outline-success">Abastecimentos</a>
+    </p>
+    <p>
+        <a asp-action="CreatePosto" class="btn btn-outline-dark">Postos</a>
+    </p>
+    <p>
+        <a asp-action="CreateMulta" class="btn btn-outline-success">Multas</a>
+    </p>
+</div>
+
+<h4>Seguros Cadastros</h4>
+<hr />
+
+<p>
+    <a asp-action="CreateSeguro" class="btn btn-outline-success">Seguros</a>
+</p>
+<p>
+    <a asp-action="CreateApolice" class="btn btn-outline-dark">Apolice</a>
+</p>
+
+<h4>Manutencao Cadastros</h4>
+<hr />
+
+<p>
+    <a asp-action="CreateManutencao" class="btn btn-outline-success">Manutencao</a>
+</p>
+<p>
+    <a asp-action="CreateOficina" class="btn btn-outline-dark">Oficina</a>
+</p>
+<hr />

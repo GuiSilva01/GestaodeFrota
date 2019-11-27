@@ -1,0 +1,40 @@
+﻿@model GestaodeFrota.Models.Manutencao
+
+@{
+    ViewData["Title"] = "Manutencao";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Cadastro de Manutencao</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DataManutencao" class="control-label"></label>
+                <input asp-for="DataManutencao" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DataProxManu" class="control-label"></label>
+                <input asp-for="DataProxManu" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Servico" class="control-label"></label>
+                <input asp-for="Servico" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <input asp-for="Tipo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

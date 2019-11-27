@@ -1,0 +1,36 @@
+﻿@model GestaodeFrota.Models.Abastecimento
+
+@{
+    ViewData["Title"] = "Abastecimento";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Cadastro de Abastecimento</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Litros" class="control-label"></label>
+                <input asp-for="Litros" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorLitro" class="control-label"></label>
+                <input asp-for="ValorLitro" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAbaste" class="control-label"></label>
+                <input asp-for="ValorAbaste" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAbaste" class="control-label"></label>
+                <input asp-for="DataAbaste" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
