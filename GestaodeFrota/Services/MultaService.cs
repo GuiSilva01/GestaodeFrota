@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace GestaodeFrota.Services
         // Metodo de buscar Multa por Id Utilizando o LINQ
         public Multa FindById(int id)
         {
-            return _context.Multa.FirstOrDefault(obj => obj.Id == id);
+            return _context.Multa.Include(obj => obj.Automovel).FirstOrDefault(obj => obj.Id == id);
         }
         // Metodo de remover um Multa por ID
         public void Remove(int id)

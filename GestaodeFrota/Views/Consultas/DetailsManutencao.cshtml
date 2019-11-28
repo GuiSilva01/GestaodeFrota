@@ -1,0 +1,59 @@
+﻿@model GestaodeFrota.Models.Manutencao
+@{
+    ViewData["Title"] = "DetailsManutencao";
+}
+
+<h1>DetailsManutecao</h1>
+
+<div>
+    <h4>Manutencao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataManutencao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataManutencao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataProxManu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataProxManu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Servico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Servico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Oficina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Oficina.NomeOficina)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Placa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+</div>

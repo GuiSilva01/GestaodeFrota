@@ -1,0 +1,70 @@
+﻿@model GestaodeFrota.Models.Automovel
+@{
+    ViewData["Title"] = "DetailsAutomovel";
+}
+
+<h1>DetailsAutomovel</h1>
+
+<div>
+    <h4>Automovel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ano)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quilometragem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quilometragem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alugado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Alugado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apolice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apolice.Tipo)
+        </dd>
+        <dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+</div>

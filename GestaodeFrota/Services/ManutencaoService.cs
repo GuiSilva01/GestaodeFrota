@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace GestaodeFrota.Services
         // Metodo de buscar Manutencao por Id Utilizando o LINQ
         public Manutencao FindById(int id)
         {
-            return _context.Manutencao.FirstOrDefault(obj => obj.Id == id);
+            return _context.Manutencao.Include(obj => obj.Automovel).Include(obj => obj.Oficina).FirstOrDefault(obj => obj.Id == id);
         }
         // Metodo de remover um Manutencao por ID
         public void Remove(int id)

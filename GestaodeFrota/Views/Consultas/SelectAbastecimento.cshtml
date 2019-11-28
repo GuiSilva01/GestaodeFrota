@@ -39,7 +39,8 @@
                     @Html.DisplayFor(modelItem => item.DataAbaste)
                 </td>
                 <td>
-                    <a asp-action="DeleteAbastecimento" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+                    <a asp-action="DetailsAbastecimento" asp-route-id="@item.Id" >Detalhes</a>
+                    <a asp-action="DeleteAbastecimento" asp-route-id="@item.Id" >Deletar</a>
                 </td>
             </tr>
         }

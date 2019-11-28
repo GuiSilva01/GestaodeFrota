@@ -1,0 +1,29 @@
+﻿@model GestaodeFrota.Models.Posto
+@{
+    ViewData["Title"] = "DetailsPosto";
+}
+
+<h1>DetailsPosto</h1>
+
+<div>
+    <h4>Posto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePosto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomePosto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoPosto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoPosto)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+</div>

@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace GestaodeFrota.Services
         // Metodo de buscar Automovel por Id Utilizando o LINQ
         public Automovel FindById(int id)
         {
-            return _context.Automovel.FirstOrDefault(obj => obj.Id == id);
+            return _context.Automovel.Include(obj => obj.Apolice).FirstOrDefault(obj => obj.Id == id);
         }
         // Metodo de remover um Automovel por ID
         public void Remove(int id)

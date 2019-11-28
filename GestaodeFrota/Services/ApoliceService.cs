@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace GestaodeFrota.Services
         // Metodo de buscar Apolice por Id Utilizando o LINQ
         public Apolice FindById(int id)
         {
-            return _context.Apolice.FirstOrDefault(obj => obj.Id == id);
+            return _context.Apolice.Include(obj => obj.Seguro).FirstOrDefault(obj => obj.Id == id);
         }
         // Metodo de remover um Apolice por ID
         public void Remove(int id)

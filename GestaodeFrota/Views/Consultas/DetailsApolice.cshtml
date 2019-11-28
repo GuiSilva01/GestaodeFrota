@@ -1,0 +1,35 @@
+﻿@model GestaodeFrota.Models.Apolice
+@{
+    ViewData["Title"] = "DetailsApolice";
+}
+
+<h1>DetailsApolice</h1>
+
+<div>
+    <h4>Apolice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seguro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seguro.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+</div>

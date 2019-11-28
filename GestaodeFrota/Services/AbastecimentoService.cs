@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GestaodeFrota.Services
@@ -33,7 +34,7 @@ namespace GestaodeFrota.Services
 
         public Abastecimento FindById(int id)
         {
-            return _context.Abastecimento.FirstOrDefault(obj => obj.Id == id);
+            return _context.Abastecimento.Include(obj => obj.Automovel).Include(obj => obj.Posto).FirstOrDefault(obj => obj.Id == id);
         }
         // Metodo de remover um abastecimento por ID
         public void Remove(int id)

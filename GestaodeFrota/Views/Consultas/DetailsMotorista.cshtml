@@ -1,0 +1,47 @@
+﻿@model GestaodeFrota.Models.Motorista
+@{
+    ViewData["Title"] = "DetailsMotorista";
+}
+
+<h1>DetailsMotorista</h1>
+
+<div>
+    <h4>Motorista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeMotorista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeMotorista)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNasc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNasc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CNH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CNH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidadeCNH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValidadeCNH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+</div>
