@@ -99,16 +99,7 @@ namespace GestaodeFrota.Models
         {
             return Abastecimento.Where(abt => abt.DataAbaste >= inicial && abt.DataAbaste <= final).Sum(abt => abt.ValorAbaste);
         }
-        //Metodo para calcular valores das Manutencoes informando data inicial e data final
-        public double TotalManutecao(DateTime inicial, DateTime final)
-        {
-            return Manutencao.Where(mtt => mtt.DataManutencao >= inicial && mtt.DataManutencao <= final).Sum(mtt => mtt.Valor);
-        }
-        //Metodo para calcular o valor das Multas informando data inicial e data final
-        public double TotalMulta(DateTime inicial, DateTime final)
-        {
-            return Multa.Where(mt => mt.DataMulta >= inicial && mt.DataMulta <= final).Sum(mt => mt.Valor);
-        }
+        
 
 
     }
