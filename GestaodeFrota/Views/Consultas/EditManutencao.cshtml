@@ -1,0 +1,47 @@
+﻿@model GestaodeFrota.Models.ViewModels.ManutencaoFormViewModel
+
+@{
+    ViewData["Title"] = "Manutencao";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Editar Manutencoes</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="EditManutencao">
+            <input type="hidden" asp-for="Manutencao.Id" />
+            <div class="form-group">
+                <label asp-for="Manutencao.DataManutencao" class="control-label"></label>
+                <input asp-for="Manutencao.DataManutencao" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Manutencao.DataProxManu" class="control-label"></label>
+                <input asp-for="Manutencao.DataProxManu" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Manutencao.Servico" class="control-label"></label>
+                <input asp-for="Manutencao.Servico" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Manutencao.Tipo" class="control-label"></label>
+                <input asp-for="Manutencao.Tipo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Manutencao.Valor" class="control-label"></label>
+                <input asp-for="Manutencao.Valor" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Manutencao.AutomovelId" class="control-label"></label>
+                <select asp-for="Manutencao.AutomovelId" asp-items="@(new SelectList(Model.Automovels,"Id","Placa"))" class="form-control"></select>
+                <label asp-for="Manutencao.OficinaId" class="control-label"></label>
+                <select asp-for="Manutencao.OficinaId" asp-items="@(new SelectList(Model.Oficinas,"Id","NomeOficina"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

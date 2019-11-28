@@ -1,0 +1,43 @@
+﻿@model GestaodeFrota.Models.ViewModels.AbastecimentoFormViewModel
+
+@{
+    ViewData["Title"] = "Abastecimento";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Editar Abastecimento</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="EditAbastecimento">
+            <input type="hidden" asp-for="Abastecimento.Id" />
+            <div class="form-group">
+                <label asp-for="Abastecimento.Litros" class="control-label"></label>
+                <input asp-for="Abastecimento.Litros" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abastecimento.ValorLitro" class="control-label"></label>
+                <input asp-for="Abastecimento.ValorLitro" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abastecimento.ValorAbaste" class="control-label"></label>
+                <input asp-for="Abastecimento.ValorAbaste" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abastecimento.DataAbaste" class="control-label"></label>
+                <input asp-for="Abastecimento.DataAbaste" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abastecimento.AutomovelId" class="control-label"></label>
+                <select asp-for="Abastecimento.AutomovelId" asp-items="@(new SelectList(Model.Automovels,"Id","Placa"))" class="form-control"></select>
+                <label asp-for="Abastecimento.PostoId" class="control-label"></label>
+                <select asp-for="Abastecimento.PostoId" asp-items="@(new SelectList(Model.Postos,"Id","EnderecoPosto"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

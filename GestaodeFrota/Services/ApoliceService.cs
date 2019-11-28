@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using GestaodeFrota.Services.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,24 @@ namespace GestaodeFrota.Services
             var obj = _context.Apolice.Find(id);
             _context.Apolice.Remove(obj);
             _context.SaveChanges();
+        }
+
+        //Metodo de Editar um Apolice po ID
+        public void Update(Apolice obj)
+        {
+            if (!_context.Apolice.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id nao existe");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
 
     }

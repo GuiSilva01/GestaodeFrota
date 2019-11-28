@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using GestaodeFrota.Services.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,24 @@ namespace GestaodeFrota.Services
             var obj = _context.Viagem.Find(id);
             _context.Viagem.Remove(obj);
             _context.SaveChanges();
+        }
+
+        //Metodo de Editar um Viagem po ID
+        public void Update(Viagem obj)
+        {
+            if (!_context.Viagem.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id nao existe");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestaodeFrota.Models;
+using GestaodeFrota.Models.ViewModels;
 using GestaodeFrota.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -520,5 +522,257 @@ namespace GestaodeFrota.Controllers
             return View(obj);
 
         }
+
+        public IActionResult EditAbastecimento(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _abastecimentoService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Automovel> automovels = _todosAutomovelService.FindAll();
+            List<Posto> postos = _postoService.FindAll();
+            AbastecimentoFormViewModel viewModel = new AbastecimentoFormViewModel { Abastecimento = obj, Automovels = automovels, Postos = postos };
+            return View(viewModel);
+        }
+
+        public IActionResult EditApolice(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _apoliceService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Seguro> seguros = _seguroService.FindAll();
+            ApoliceFormViewModel viewModel = new ApoliceFormViewModel { Apolice = obj, Seguros = seguros };
+            return View(viewModel);
+        }
+
+        public IActionResult EditAutomovel(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _todosAutomovelService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Apolice> apolices = _apoliceService.FindAll();
+            AutomovelFormViewModel viewModel = new AutomovelFormViewModel { Automovel = obj, Apolices = apolices };
+            return View(viewModel);
+        }
+
+        public IActionResult EditManutencao(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _manutencaoService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Automovel> automovels = _todosAutomovelService.FindAll();
+            List<Oficina> oficinas = _oficinaService.FindAll();
+            ManutencaoFormViewModel viewModel = new ManutencaoFormViewModel { Manutencao = obj, Automovels = automovels, Oficinas = oficinas  };
+            return View(viewModel);
+        }
+
+        public IActionResult EditMotorista(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _todosMotorstaService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            
+            return View();
+        }
+
+        public IActionResult EditMulta(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _multaService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Automovel> automovels = _todosAutomovelService.FindAll();
+            MultaFormViewModel viewModel = new MultaFormViewModel { Multa = obj, Automovels = automovels };
+            return View(viewModel);
+        }
+
+        public IActionResult EditOficina(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _oficinaService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+
+            return View();
+        }
+
+        public IActionResult EditPosto(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _postoService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+
+            return View();
+        }
+
+        public IActionResult EditSeguro(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _seguroService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+
+            return View();
+        }
+
+        public IActionResult EditViagem(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _viagemService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Automovel> automovels = _automovelService.FindAll();
+            List<Motorista> motoristas = _motoristaService.FindAll();
+            ViagemFormViewModel viewModel = new ViagemFormViewModel { Viagem = obj, Automovels = automovels, Motoristas = motoristas };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditAbastecimento(int id, Abastecimento abastecimento)
+        {
+            if (id != abastecimento.Id)
+            {
+                return BadRequest();
+            }
+            _abastecimentoService.Update(abastecimento);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditApolice(int id, Apolice apolice)
+        {
+            if (id != apolice.Id)
+            {
+                return BadRequest();
+            }
+            _apoliceService.Update(apolice);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditAutomovel(int id, Automovel automovel)
+        {
+            if (id != automovel.Id)
+            {
+                return BadRequest();
+            }
+            _todosAutomovelService.Update(automovel);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditManutencao(int id, Manutencao manutencao)
+        {
+            if (id != manutencao.Id)
+            {
+                return BadRequest();
+            }
+            _manutencaoService.Update(manutencao);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditMulta(int id, Multa multa)
+        {
+            if (id != multa.Id)
+            {
+                return BadRequest();
+            }
+            _multaService.Update(multa);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditViagem(int id, Viagem viagem)
+        {
+            if (id != viagem.Id)
+            {
+                return BadRequest();
+            }
+            _viagemService.Update(viagem);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

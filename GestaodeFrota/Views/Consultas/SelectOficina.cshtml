@@ -27,7 +27,9 @@
                 @Html.DisplayFor(modelItem => item.Endereco)
             </td>
             <td>
-                <a asp-action="DeleteOficina" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+                <a asp-action="DetailsOficina" asp-route-id="@item.Id">Detalhes</a>
+                <a asp-action="DeleteOficina" asp-route-id="@item.Id">Deletar</a>
+                <a asp-action="EditOficina" asp-route-id="@item.Id">Editar</a>
             </td>
         </tr>
         }

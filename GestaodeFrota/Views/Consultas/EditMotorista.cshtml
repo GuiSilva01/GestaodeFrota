@@ -1,0 +1,40 @@
+﻿@model GestaodeFrota.Models.Motorista
+
+@{
+    ViewData["Title"] = "Motorista";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Editar Motorista</h4>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="EditMotorista">           
+            <div class="form-group">
+                <label asp-for="NomeMotorista" class="control-label"></label>
+                <input asp-for="NomeMotorista" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNasc" class="control-label"></label>
+                <input asp-for="DataNasc" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CNH" class="control-label"></label>
+                <input asp-for="CNH" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValidadeCNH" class="control-label"></label>
+                <input asp-for="ValidadeCNH" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Disponivel" class="control-label"></label>
+                <input asp-for="Disponivel" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

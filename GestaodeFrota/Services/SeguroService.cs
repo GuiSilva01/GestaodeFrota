@@ -1,5 +1,6 @@
 ﻿using GestaodeFrota.Data;
 using GestaodeFrota.Models;
+using GestaodeFrota.Services.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,24 @@ namespace GestaodeFrota.Services
             var obj = _context.Seguro.Find(id);
             _context.Seguro.Remove(obj);
             _context.SaveChanges();
+        }
+
+        //Metodo de Editar um Seguro po ID
+        public void Update(Seguro obj)
+        {
+            if (!_context.Seguro.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id nao existe");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
 
 

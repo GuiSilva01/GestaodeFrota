@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using GestaodeFrota.Services.Exceptions;
 
 namespace GestaodeFrota.Services
 {
@@ -42,6 +42,24 @@ namespace GestaodeFrota.Services
             var obj = _context.Abastecimento.Find(id);
             _context.Abastecimento.Remove(obj);
             _context.SaveChanges();
+        }
+
+        //Metodo de Editar um abastecimento po ID
+        public void Update(Abastecimento obj)
+        {
+            if (!_context.Abastecimento.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id nao existe");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
 
     }
